@@ -1,8 +1,9 @@
 rootProject.name = "sme-map"
 
 include("app")
+include("batch")
 include("domain")
-include("adapter:elasticsearch")
+include("adapter:opensearch")
 
 pluginManagement {
     val kotlinVersion: String by settings
