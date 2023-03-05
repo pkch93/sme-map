@@ -23,11 +23,13 @@ java {
 }
 
 subprojects {
-    apply(plugin = "org.jetbrains.kotlin.jvm")
-    apply(plugin = "java-test-fixtures")
-    apply(plugin = "org.springframework.boot")
-    apply(plugin = "io.spring.dependency-management")
-    apply(plugin = "org.jetbrains.kotlin.plugin.spring")
+    apply {
+        plugin("org.jetbrains.kotlin.jvm")
+        plugin("java-test-fixtures")
+        plugin("org.springframework.boot")
+        plugin("io.spring.dependency-management")
+        plugin("org.jetbrains.kotlin.plugin.spring")
+    }
 
     repositories {
         mavenCentral()
@@ -49,6 +51,7 @@ subprojects {
         implementation("org.jetbrains.kotlin:kotlin-reflect")
 
         implementation("org.springframework.boot:spring-boot-starter")
+        annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 
         testImplementation("org.springframework.boot:spring-boot-starter-test")
         testImplementation("io.projectreactor:reactor-test")
