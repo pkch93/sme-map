@@ -15,7 +15,6 @@ val jvmVersion: String by project
 val releaseVersion: String by project
 
 group = "edu.pkch.sme"
-version = releaseVersion
 
 java {
     sourceCompatibility = JavaVersion.toVersion(jvmVersion)
@@ -49,6 +48,9 @@ subprojects {
     dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
         implementation("org.jetbrains.kotlin:kotlin-reflect")
+
+        val kotlinLoggingVersion: String by project
+        implementation("io.github.microutils:kotlin-logging-jvm:${kotlinLoggingVersion}")
 
         implementation("org.springframework.boot:spring-boot-starter")
         annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")

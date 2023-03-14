@@ -17,3 +17,4 @@ pluginManagement {
         id("io.spring.dependency-management") version springDependencyManagementVersion
     }
 }
+include("test-support")
