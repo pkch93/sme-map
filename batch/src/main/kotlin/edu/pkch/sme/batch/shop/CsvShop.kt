@@ -5,6 +5,7 @@ import edu.pkch.sme.Coordinate
 import edu.pkch.sme.shop.Shop
 
 data class CsvShop(
+    val id: Long,
     val name: String,
     val branch: String,
     val category: String,
@@ -25,6 +26,7 @@ data class CsvShop(
 ) {
     fun toShop(): Shop {
         return Shop(
+            id,
             name,
             branch,
             category,

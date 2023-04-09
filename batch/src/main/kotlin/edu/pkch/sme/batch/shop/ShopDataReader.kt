@@ -56,7 +56,6 @@ class ShopDataReader(
         lineMapper.setLineTokenizer(tokenizer)
         lineMapper.setFieldSetMapper(CsvShopFieldSetMapper())
 
-
         this.setResource(ClassPathResource(resourcePath))
         this.setLineMapper(lineMapper)
         this.setLinesToSkip(offset)

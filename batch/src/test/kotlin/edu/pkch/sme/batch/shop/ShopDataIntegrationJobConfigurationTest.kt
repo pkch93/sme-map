@@ -1,7 +1,6 @@
 package edu.pkch.sme.batch.shop
 
 import edu.pkch.sme.batch.BatchTest
-import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import org.springframework.test.context.TestPropertySource
 

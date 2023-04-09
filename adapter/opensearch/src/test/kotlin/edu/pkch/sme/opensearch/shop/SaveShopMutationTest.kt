@@ -16,6 +16,7 @@ internal class SaveShopMutationTest
     fun saveAll() {
         val now = LocalDate.of(2023, 2, 18)
         val shop = Shop(
+            1L,
             "가게1",
             "",
             "한식",

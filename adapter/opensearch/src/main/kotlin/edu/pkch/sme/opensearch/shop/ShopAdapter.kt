@@ -11,9 +11,7 @@ class ShopAdapter(
     private val saveShopMutation: SaveShopMutation
 ): SaveShopPort, SaveAllShopPort
 {
-    override fun save(shop: Shop) {
-        TODO("Not yet implemented")
-    }
+    override fun save(shop: Shop) = Unit
 
     override fun saveAll(shops: List<Shop>) {
         val now = LocalDate.now()

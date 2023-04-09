@@ -3,6 +3,7 @@ package edu.pkch.sme.shop
 import edu.pkch.sme.Address
 
 class Shop(
+    val id: Long,
     val name: String,
     val branch: String,
     val category: String,

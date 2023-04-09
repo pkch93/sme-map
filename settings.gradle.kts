@@ -4,6 +4,7 @@ include("app")
 include("batch")
 include("domain")
 include("adapter:opensearch")
+include("test-support")
 
 pluginManagement {
     val kotlinVersion: String by settings
@@ -17,4 +18,3 @@ pluginManagement {
         id("io.spring.dependency-management") version springDependencyManagementVersion
     }
 }
-include("test-support")

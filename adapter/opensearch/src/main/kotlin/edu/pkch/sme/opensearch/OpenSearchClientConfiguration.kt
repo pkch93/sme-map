@@ -17,7 +17,8 @@ class OpenSearchClientConfiguration {
     @Bean
     fun openSearchClient(properties: OpenSearchClientProperties,
                          objectMapper: ObjectMapper): OpenSearchClient {
-        val restClient = RestClient.builder(HttpHost(properties.hostname, properties.port)).build()
+        val host = HttpHost(properties.hostname, properties.port)
+        val restClient = RestClient.builder(host).build()
         val transport = RestClientTransport(restClient, JacksonJsonpMapper())
         return OpenSearchClient(transport)
     }

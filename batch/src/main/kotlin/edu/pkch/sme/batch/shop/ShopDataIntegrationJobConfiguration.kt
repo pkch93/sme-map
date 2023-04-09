@@ -1,5 +1,6 @@
 package edu.pkch.sme.batch.shop
 
+import edu.pkch.sme.shop.SaveAllShopPort
 import edu.pkch.sme.shop.Shop
 import mu.KotlinLogging
 import org.springframework.batch.core.Job
@@ -23,6 +24,7 @@ private const val STEP_NAME: String = "shopDataIntegrationStep"
 class ShopDataIntegrationJobConfiguration(
     private val jobBuilderFactory: JobBuilderFactory,
     private val stepBuilderFactory: StepBuilderFactory,
+    private val saveAllShopPort: SaveAllShopPort
 ) {
     private val resourcePath: String = "/data.csv"
     private var offset: Int = 1
@@ -59,5 +61,6 @@ class ShopDataIntegrationJobConfiguration(
 
     @Bean
     fun shopDataWriter() = ItemWriter<Shop> {
+        saveAllShopPort.saveAll(it)
     }
 }

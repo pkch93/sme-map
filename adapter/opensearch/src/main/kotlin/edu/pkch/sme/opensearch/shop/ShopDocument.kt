@@ -7,6 +7,8 @@ data class ShopDocument(
     val name: String,
     val branch: String,
     val category: String,
+    val subCategory: String,
+    val industry: String,
     val location: String,
 ) {
     companion object Factory {
@@ -16,10 +18,12 @@ data class ShopDocument(
     }
 
     constructor(shop: Shop): this(
-        1,
+        shop.id,
         shop.name,
         shop.branch,
         shop.category,
+        shop.subCategory,
+        shop.industry,
         "${shop.address.coordinate.latitude}, ${shop.address.coordinate.longitude}"
     )
 }

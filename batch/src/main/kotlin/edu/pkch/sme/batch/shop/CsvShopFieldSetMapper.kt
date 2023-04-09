@@ -7,6 +7,7 @@ class CsvShopFieldSetMapper: FieldSetMapper<CsvShop> {
 
     override fun mapFieldSet(fieldSet: FieldSet): CsvShop {
         return CsvShop(
+            fieldSet.readLong("상가업소번호"),
             fieldSet.readString("상호명"),
             fieldSet.readString("지점명"),
             fieldSet.readString("상권업종대분류명"),
